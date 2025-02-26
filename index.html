@@ -106,7 +106,7 @@ border: 1px solid rgba(255, 255, 255, 0.3); align-content:center; display: flex;
 <td style="padding:10%;"><input type="number" id="portion" value="0" min="0" max="5" readonly></input></td>
 
 </tr>
-<tr><td><button id="submit" onclick="onclicksumbit()" disabled>order now</button></td></tr>
+<tr><td><button id="submit" onclick="onclicksubmit()" disabled>order now</button></td></tr>
 
 
 </table>
@@ -207,15 +207,14 @@ document.getElementById("errorMessage").style.display="block";}
 isportion(Grandtotal);
 }
 function isportion(Grandtotal){
-            if(Grantotal ==5 ){
+            if(Grandtotal ==5 ){
                         document.getElementById("submit").disabled=false;
             }
             else{
                         document.getElementById("submit").disabled=true;
-            }
-            function onclicksubmit(){
-                        alert("check out page");
-            }
+            }}
+function onclicksubmit(){
+alert("check out page");
 }
 </script>
 
