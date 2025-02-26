@@ -3,20 +3,28 @@
 <html lang="en">
 
 <head><title>sample 2</title></head>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<body style="font-family: 'DM Sans', sans-serif; font-size:20px; font-weight: bold; color:white;	text-shadow: 1px 1px 2px #000, 0 0 25px black;  display: flex;            justify-content: center;         align-items: center;
+            height: 100vh;
+            margin: 0;
+background-size: cover; background-image:url('bgimg.jpg');">
 
-<body style="font-family:monospace; font-size:20px;">
+<div style="background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3); align-content:center; display: flex; height:100%" >
 
-<div style="background-color:#FFD15C; align-content:center; display: flex;" >
 
-<div style="width:30%;"></div>
 
-<table>
+<table style="height:100%; width:500px; margin:20px;">
 
-<tr style="height:50px;">
+<tr style="height:50px; ">
 
-<td style="width:200px;">Apple</td>
+<td style="padding:20px;">Apple</td>
 
-<td>
+<td style="padding-left:50px; background-size: cover; background-image:url('https://parade.com/.image/t_share/MTkwNTgxNDY1MzcxMTkxMTY0/different-types-of-apples-jpg.jpg'); border-radius: 12px; ">
 
 <button onclick="decrease(1)">-</button>
 
@@ -29,9 +37,9 @@
 </tr>
 <tr style="height:50px;">
 
-<td>Banana</td>
+<td style="padding:20px;">Banana</td>
 
-<td>
+<td  style="padding-left:50px; background-size: cover; background-image:url('https://th.bing.com/th/id/R.aca03da35381f27719e78a4415704b3a?rik=2X1e2Leyg4wgKA&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f4%2f4c%2fBananas.jpg&ehk=pBdYJTGZAwPL9M3in48tRoqQeOIDWGQBzl7VTwJHddU%3d&risl=&pid=ImgRaw&r=0'); border-radius: 12px;">
 
 <button onclick="decrease(2)">-</button>
 
@@ -45,9 +53,9 @@
 
 <tr style="height:50px;">
 
-<td>Grape</td>
+<td style="padding:20px;">Grape</td>
 
-<td>
+<td style="padding-left:50px; background-size: cover; background-image:url('https://th.bing.com/th/id/OIP.D6ixoz9FRKG2ahV35UVw3gHaEo?rs=1&pid=ImgDetMain'); border-radius: 12px;">
 
 <button onclick="decrease(3)">-</button>
 
@@ -62,9 +70,9 @@
 
 <tr style="height:50px;">
 
-<td>Pomegranate</td>
+<td style="padding:20px;">Pomegranate</td>
 
-<td>
+<td style="padding-left:50px; background-size: cover; background-image:url('https://healthyfamilyproject.com/wp-content/uploads/2020/05/Pomegranate-background.jpg'); border-radius: 12px;">
 
 <button onclick="decrease(4)">-</button>
 
@@ -78,9 +86,9 @@
 
 <tr style="height:50px;">
 
-<td>Watermelon</td>
+<td style="padding:20px;">Watermelon</td>
 
-<td>
+<td style="padding-left:50px; background-size: cover; background-image:url('https://www.thespruceeats.com/thmb/YADeVEZ4w28qr4yvFm3POgN2t7c=/4592x3064/filters:fill(auto,1)/sliced-watermelon-fresh-on-wooden-board-949441944-5ae62f45ae9ab80037647c50.jpg'); border-radius: 12px;">
 
 <button onclick="decrease(5)">-</button>
 
@@ -94,14 +102,17 @@
 
 <tr style="height:50px;">
 
-<td>portion</td><td><input type="number" id="portion" value="0" min="0" max="5" readonly></input></td>
+<td style="padding:20px;">portion<div id="errorMessage" style="display:none; color: red;">Only five portion</div></td>
+<td style="padding:10%;"><input type="number" id="portion" value="0" min="0" max="5" readonly></input></td>
 
 </tr>
+
+
 
 </table>
 </div>
 
-<div id="errorMessage" style="display:none; color: red;">Only five portion</div>
+<div /div>
 
 <script>
 
@@ -131,12 +142,10 @@ if(value<5 && totalsum<5){
 
 input.value=value+1;
 
-document.getElementById("errorMessage").style.display="none";
 
 }
 else{
 
-document.getElementById("errorMessage").style.display="block";
 
 }
 
@@ -155,7 +164,11 @@ let Grandtotal= parseInt(val1.value)+ parseInt(val2.value)+ parseInt(val3.value)
 let input1 =document.getElementById("portion");
 
 input1.value=Grandtotal;
-
+if(Grandtotal < 5){
+document.getElementById("errorMessage").style.display="none";
+}
+else {
+document.getElementById("errorMessage").style.display="block";}
 }
 
 function decrease(x){
@@ -185,6 +198,11 @@ let Grandtotal= parseInt(val1.value)+ parseInt(val2.value)+ parseInt(val3.value)
 let input1 =document.getElementById("portion");
 
 input1.value=Grandtotal;
+if(Grandtotal < 5){
+document.getElementById("errorMessage").style.display="none";
+}
+else {
+document.getElementById("errorMessage").style.display="block";}
 
 }
 
