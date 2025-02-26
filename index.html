@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head><title>sample 2</title></head>
+
+<body style="font-family:monospace; font-size:20px;">
+
+<div style="background-color:#FFD15C; align-content:center; display: flex;" >
+
+<div style="width:30%;"></div>
+
+<table>
+
+<tr style="height:50px;">
+
+<td style="width:200px;">Apple</td>
+
+<td>
+
+<button onclick="decrease(1)">-</button>
+
+<input type="number" id="numField1" value="0" min="0" max="5" readonly></input>
+
+<button onclick="increase(1)">+</button>
+
+</td>
+
+</tr>
+<tr style="height:50px;">
+
+<td>Banana</td>
+
+<td>
+
+<button onclick="decrease(2)">-</button>
+
+<input type="number" id="numField2" value="0" min="0" max="5" readonly></input>
+
+<button onclick="increase(2)">+</button>
+
+</td>
+
+</tr>
+
+<tr style="height:50px;">
+
+<td>Grape</td>
+
+<td>
+
+<button onclick="decrease(3)">-</button>
+
+<input type="number" id="numField3" value="0" min="0" max="5" readonly></input>
+
+<button onclick="increase(3)">+</button>
+
+</td>
+
+</tr>
+
+
+<tr style="height:50px;">
+
+<td>Pomegranate</td>
+
+<td>
+
+<button onclick="decrease(4)">-</button>
+
+<input type="number" id="numField4" value="0" min="0" max="5" readonly></input>
+
+<button onclick="increase(4)">+</button>
+
+</td>
+
+</tr>
+
+<tr style="height:50px;">
+
+<td>Watermelon</td>
+
+<td>
+
+<button onclick="decrease(5)">-</button>
+
+<input type="number" id="numField5" value="0" min="0" max="5" readonly></input>
+
+<button onclick="increase(5)">+</button>
+
+</td>
+
+</tr>
+
+<tr style="height:50px;">
+
+<td>portion</td><td><input type="number" id="portion" value="0" min="0" max="5" readonly></input></td>
+
+</tr>
+
+</table>
+</div>
+
+<div id="errorMessage" style="display:none; color: red;">Only five portion</div>
+
+<script>
+
+function gettotalsum(){
+
+let total =0;
+
+for (let i=1; i<=5;i++){
+
+total +=parseInt(document.getElementById("numField" + i).value);
+
+}
+
+return total;
+
+}
+
+function increase (x) {
+
+let input =document.getElementById("numField" + x);
+
+let value = parseInt(input.value);
+
+let totalsum = gettotalsum();
+
+if(value<5 && totalsum<5){
+
+input.value=value+1;
+
+document.getElementById("errorMessage").style.display="none";
+
+}
+else{
+
+document.getElementById("errorMessage").style.display="block";
+
+}
+
+let val1 =document.getElementById("numField1");
+
+let val2 =document.getElementById("numField2");
+
+let val3 =document.getElementById("numField3");
+
+let val4 =document.getElementById("numField4");
+
+let val5 =document.getElementById("numField5");
+
+let Grandtotal= parseInt(val1.value)+ parseInt(val2.value)+ parseInt(val3.value)+ parseInt(val4.value)+ parseInt(val5.value);
+
+let input1 =document.getElementById("portion");
+
+input1.value=Grandtotal;
+
+}
+
+function decrease(x){
+
+let input =document.getElementById("numField" + x);
+
+let value = parseInt(input.value);
+
+if(value>0){
+
+input.value=value-1;
+
+}
+
+let val1 =document.getElementById("numField1");
+
+let val2 =document.getElementById("numField2");
+
+let val3 =document.getElementById("numField3");
+
+let val4 =document.getElementById("numField4");
+
+let val5 =document.getElementById("numField5");
+
+let Grandtotal= parseInt(val1.value)+ parseInt(val2.value)+ parseInt(val3.value)+ parseInt(val4.value)+ parseInt(val5.value);
+
+let input1 =document.getElementById("portion");
+
+input1.value=Grandtotal;
+
+}
+
+</script>
+
+</body>
+
+</html>
